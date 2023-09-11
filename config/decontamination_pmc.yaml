@@ -1,0 +1,15 @@
+models:
+  - dedup-isc-ft-v107
+postprocess_columns:
+  - dedup-isc-ft-v107-score
+additional_fields:
+  - uid
+  - paper_id
+  - original_image_filename
+nworkers: 2
+batch_size: 512
+device: 0
+input_tars: "data/processed/pmc/{00000000..99999999}.tar"
+output_metadata_dir: "data/postprocessed/pmc/metadata"
+custom_pypath: null
+reprocess: True

@@ -1,0 +1,12 @@
+awscli==1.29.1
+PyYAML==5.3
+boto3==1.28.1
+lxml==4.9.3
+git+https://github.com/nopperl/Pillow.git@parse-eps-trailer
+pdf2image==1.16.3
+pylatexenc==2.10
+git+https://github.com/alvinwan/TexSoup@c91a14a0019ff7df197e71c906bc0403eddf80dc
+jsonlines==4.0.0
+pyarrow==14.0.0
+pandas==2.1.2
+git+https://github.com/mlfoundations/dataset2metadata@0bced76b1d45239f0932b0e5abf76935c7de6f84
