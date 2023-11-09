@@ -19,7 +19,7 @@ def process_tar_file(tar_file):
         member_names = tar.getnames()
         jpg_members = [member for member in tar.getmembers() if member.name.endswith('.jpg') and splitext(member.name)[0] + ".txt" in member_names]
         jpg_members.sort(key=lambda x: x.name)
-        metadata = {"uid": [], "key": [], "paper_id": [], "original_image_filename": []}
+        metadata = {"uid": [], "key": [], "text": [], "paper_id": [], "original_image_filename": []}
         # TODO: could save all metadata listed in https://github.com/rom1504/img2dataset/blob/main/README.md
 
         # Create a new in-memory tar file for the updated members
@@ -46,6 +46,7 @@ def process_tar_file(tar_file):
             metadata_member = {
                 "uid": uuid4().hex,
                 "key": new_basename,
+                "text": txt_data.decode("utf-8"),
                 "paper_id": splitext(basename(member.name))[0].split("-")[0],
                 "original_image_filename": "-".join(basename(member.name).split("-")[1:]),
             }
@@ -58,6 +59,7 @@ def process_tar_file(tar_file):
             # Add metadata
             metadata["uid"].append(metadata_member["uid"])
             metadata["key"].append(metadata_member["key"])
+            metadata["text"].append(metadata_member["text"])
             metadata["paper_id"].append(metadata_member["paper_id"])
             metadata["original_image_filename"].append(metadata_member["original_image_filename"])
 

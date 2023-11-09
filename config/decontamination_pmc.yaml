@@ -4,6 +4,7 @@ postprocess_columns:
   - dedup-isc-ft-v107-score
 additional_fields:
   - uid
+  - text
   - paper_id
   - original_image_filename
 nworkers: 2

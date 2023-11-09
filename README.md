@@ -1,8 +1,9 @@
 # Training CLIP models on Data extracted from Scientific Papers
 
-  * Data and Models: https://huggingface.co/nopperl/clip-arxiv-pmc
+  * Data and Model: https://huggingface.co/nopperl/clip-arxiv-pmc
   * arXiv dataset: https://huggingface.co/datasets/nopperl/arxiv-image-text
   * PMC dataset: https://huggingface.co/datasets/nopperl/pmc-image-text
+  * Paper: https://arxiv.org/abs/2311.04711
 
 This repo contains code to collect image-text pairs from figures in scientific papers from the [arXiv](https://arxiv.org) and [PubMed Central](https://www.ncbi.nlm.nih.gov/pmc/) repositories. This data can be used to train [CLIP](https://arxiv.org/abs/2103.00020) models.
 
@@ -148,3 +149,6 @@ The total amount of image and text files in the dataset can be calculated using:
 
     scripts/count_tar_members.sh data/postprocessed/arxiv/shards 
 
+## Improvements
+
+  * add original image size and sha256 checksum to metadata
